@@ -9,7 +9,7 @@ let postcss = require('postcss'),
 module.exports = opt => ({
     postcssPlugin: 'postcss-node-sass',
     Once (root, { result }) {
-        let sass = opt.sass || defaultNodeSass;
+        let sass = opt?.sass || defaultNodeSass;
         let map = typeof result.opts.map === 'object' ? result.opts.map : {}
         let css = root.toResult(Object.assign(result.opts, {
             map: Object.assign({
